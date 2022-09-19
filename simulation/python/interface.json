@@ -1,6 +1,6 @@
 {
     "name": "PVC_Extruder",
-    "timeout": 60,
+    "timeout": 600,
     "description": {
         "config": {
             "category": "Struct",
@@ -40,11 +40,32 @@
                         "comment": "Initial temperature of material (Kelvin)"
                     }
                 },
-                {
+				{
                     "name": "noise",
                     "type": {
                         "category": "Number",
-                        "comment": "sensor noise applied to states"
+                        "comment": "Noise"
+                    }
+                },
+				{
+                    "name": "demand",
+                    "type": {
+                        "category": "Number",
+                        "comment": "demand setpoint (yield = parts/second)"
+                    }
+                },
+				{
+                    "name": "cost",
+                    "type": {
+                        "category": "Number",
+                        "comment": "material cost kg/s"
+                    }
+                },
+				{
+                    "name": "selling_price",
+                    "type": {
+                        "category": "Number",
+                        "comment": "selling price kg/s"
                     }
                 }
             ]
@@ -124,28 +145,49 @@
                     "name": "yield",
                     "type": {
                         "category": "Number",
-                        "comment": "Instantaneous manufacturing yield, i.e. the number of on spec parts per iteration"
+                        "comment": "Instantaneous manufacturing yield, i.e. the number of good parts per iteration (dimensionless)"
                     }
                 },
-                {
+				{
                     "name": "efficiency",
                     "type": {
                         "category": "Number",
-                        "comment": " number of good parts/total parts (dimensionless)"
+                        "comment": "% of Parts on spec produced"
                     }
                 },
-                {
+				{
+                    "name": "demand",
+                    "type": {
+                        "category": "Number",
+                        "comment": ""
+                    }
+                },
+				{
+                    "name": "total_cost",
+                    "type": {
+                        "category": "Number",
+                        "comment": "total cost of the material"
+                    }
+                },
+				{
+                    "name": "total_revenue",
+                    "type": {
+                        "category": "Number",
+                        "comment": "total revenue"
+                    }
+                },
+				{
                     "name": "parts_on_spec",
                     "type": {
                         "category": "Number",
-                        "comment": " number of good parts"
+                        "comment": ""
                     }
                 },
-                {
-                    "name": "parts_per_iteration",
+				{
+                    "name": "cnt",
                     "type": {
                         "category": "Number",
-                        "comment": "the number of total parts per iteration"
+                        "comment": "elapsed time"
                     }
                 }
             ]

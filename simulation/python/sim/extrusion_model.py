@@ -153,14 +153,10 @@ class ExtrusionModel:
         # NOTE: the cutter frequency is equivalent to the number of parts
         # produced per second.  Since the simulation time step is also
         # 1 second, this is also the number of parts per iteration.
-
-        #parts_per_iteration = self.f_c * self.Δt
-
+        parts_per_iteration = self.f_c * self.Δt
+        
         #self.yield_ = parts_per_iteration
-
-        self.parts_per_iteration = self.f_c * self.Δt
-
         if self.length_within_tolerance():
-            self.yield_ = self.parts_per_iteration
+            self.yield_ = parts_per_iteration
         else:
             self.yield_ = 0
